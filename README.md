@@ -25,10 +25,18 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Step 1Create a Resource Group
+Create a Windows 10 Virtual Machine (VM)
+While creating the VM, select the previously created Resource Group
+While creating the VM, allow it to create a new Virtual Network (Vnet) and Subnet
+Create a Linux (Ubuntu) VM
+While creating the VM, select the previously created Resource Group and Virtual Network—the Virtual Network MUST BE THE SAME.
+Authentication type: Username/Password
+Ensure both VMs are in the same Virtual Network / Subnet
+End the lab, but keep both VMs for Part 2! make this format into a sentence short and sweet 
+- Step 2Connect to your Windows VM via Microsoft Remote Desktop, install and filter Wireshark for ICMP, then observe the traffic as you ping both the Ubuntu VM's private IP and a public website.
+- Step 3Run a perpetual ping from your Windows VM to your Ubuntu VM while toggling Inbound ICMP in the Network Security Group to observe traffic changes in Wireshark, then switch to an SSH filter and capture the encrypted traffic as you remotely log into the Linux machine via PowerShell.
+- Step 4Filter Wireshark for DHCP while running ipconfig /renew, for DNS while performing nslookup for websites, and for RDP (tcp.port == 3389) to observe the constant traffic stream required to maintain your live remote session.
 
 <h2>Actions and Observations</h2>
 
